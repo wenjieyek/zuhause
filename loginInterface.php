@@ -18,7 +18,7 @@ include "config.php"
 
 
 
-      <form class="form-signin">
+      <form class="form-signin" method="POST" action="login.php">
 
         <h2 class="form-signin-heading"><img src="picture/home.png" class="img-responsive" style="height:40px;">&nbsp Please sign in</h2>
 
@@ -34,7 +34,32 @@ include "config.php"
 
         <p><a href="registerInterface.php" style="float:right;">Register</a></p>
 
+          <?php
+  if (isset($_SESSION['flash'])) {
+    
+  
+?>
+
+    <p style="color:red;"> 
+
+<?php 
+echo $_SESSION['flash'];
+
+
+
+?>
+</p>
+
+<?php 
+
+unset($_SESSION['flash']);
+}
+
+?>
+
       </form>
+
+      
 
 
      

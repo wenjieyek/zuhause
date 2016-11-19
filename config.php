@@ -2,7 +2,7 @@
 	$servername="localhost";
 	$username="root";
 	$password="";
-	$database="test1";
+	$database="project";
 
 	//create connection
 	$conn= new mysqli ($servername,$username,$password,$database);
@@ -66,37 +66,82 @@ session_start();
       <a class="nav-link" href="index.php">Share Your Design </a>
     </li>
 
-    <li class="nav-item ">
-    <form class="form-inline float-xs-left">
-    <input class="form-control" type="text" placeholder="Search">
-    </li>
-
-    <li class="nav-item ">
-    <button class="btn btn-outline-secondary" type="submit">Search</button>
-    </form>
-    </li>
     
-  
-        <li class='nav-item float-xs-right'><a class='nav-link' href='loginInterface.php'> <i class='fa fa-user-circle' aria-hidden='true'></i>&nbspLogin </a></li>
     
+    <?php
+
+    if (@$_SESSION['username']=="") {
+
+    echo "<li class='nav-item float-xs-left'>
+            <a class='nav-link' href='loginInterface.php'> 
+            <i class='fa fa-user-circle' aria-hidden='true'></i>&nbspLogin 
+            </a>
+            </li>";
+ } else{
+
+  echo "<li class='nav-item dropdown float-xs-left'>
+
+      <a class='nav-link dropdown-toggle' href='http://example.com' id='supportedContentDropdown' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+      <i class='fa fa-user-circle' aria-hidden='true'></i>&nbsp ".ucfirst(@$_SESSION['username'])."
+      </a>
+
+      <div class='dropdown-menu ' aria-labelledby='supportedContentDropdown'>";
+
+        $sql = "SELECT * FROM designer WHERE useremail='".@$_SESSION['email']."'";
+      $result = $conn->query($sql);
 
 
-<li class='nav-item dropdown float-xs-right'>
-      <a class='nav-link dropdown-toggle' href='http://example.com' id='supportedContentDropdown' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa fa-user-circle' aria-hidden='true'></i>&nbspLogin</a>
-      <div class='dropdown-menu' aria-labelledby='supportedContentDropdown'>
-        <a class='dropdown-item' href='updateInterface.php'><i class="fa fa-user-circle" aria-hidden="true"></i>&nbspUpdate</a>
-        <a class='dropdown-item' href='logout.php'><i class="fa fa-sign-out" aria-hidden="true"></i>&nbspLog Out</a>
+
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+        echo "<P><img src='".$row['userpicture']."'  class='img-thumbnail'  width='80px' style='margin-left:1cm;'><p>";
+
+
+        }
+
+
+        
+
+        echo "<a class='dropdown-item' href='updateInterface.php?email=".@$_SESSION['email']."'>
+        <i class='fa fa-user-circle' aria-hidden='true'></i>
+        &nbspUpdate
+        </a>
+       
+        <a class='dropdown-item' href='logout.php'>
+        <i class='fa fa-sign-out' aria-hidden='true'></i>
+        &nbspLog Out
+        </a>
        
       </div>
+    </li>";
+ }
+    
+
+    ?>
+        
+    <form class="form-inline float-xs-right">
+    <li class="nav-item ">
+    
+    <input class="form-control" type="text" placeholder="Search">
+    
+
+  
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+    
     </li>
 
+    </form>
 
- }
+
+
+ 
 
 
   
 
        
+
 
     
     </ul>

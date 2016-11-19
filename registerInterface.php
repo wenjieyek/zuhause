@@ -18,7 +18,7 @@ include "config.php"
 
 
 
-      <form class="form-signin">
+      <form class="form-signin" method="POST" action="register.php"  enctype="multipart/form-data">
 
         <h2 class="form-signin-heading"><img src="picture/home.png" class="img-responsive" style="height:40px;">&nbsp Please Register</h2>
 
@@ -34,9 +34,9 @@ include "config.php"
 
          <input type="text" name="usercompanyname" id="inputEmail" class="form-control" placeholder="Company Name" required >
 
-         <input type="text" name="userphoenumber" id="inputEmail" class="form-control" placeholder="Phone Number" required >
+         <input type="text" name="userphonenumber" id="inputEmail" class="form-control" placeholder="Phone Number" required >
 
-         <input type="file" name="userpicture" id="inputEmail" class="form-control" placeholder="Picture" required >
+         <input type="file" name="fileToUpload" id="inputEmail" class="form-control" placeholder="Picture" required >
 
          <input type="text" name="userdescription" id="inputEmail" class="form-control" placeholder="Description" required >
         
