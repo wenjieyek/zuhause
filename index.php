@@ -10,7 +10,51 @@
     <link href="./index_files/album.css" rel="stylesheet">
  <!-- Custom styles for this template -->
 <link href="./index_files/carousel.css" rel="stylesheet">
+
+
+<script>
+function myFunction() {
+    $('#myModal').modal('show')
+}
+</script>
+
+
 </head>
+
+<body onload="myFunction()">
+
+
+  <!-- Ad Modal -->
+<div class="modal fade" id="myModal"  >
+  <div class="modal-dialog" role="document">
+ 
+
+    <?php
+      $sql = "SELECT * FROM advertisment WHERE type='mainpage'";
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        echo "<a href='http://".$row["link"]."'><img src='".$row["picture"]."' class='img-fluid' width='400px' style='margin-left:16%;'></a>";
+      }
+      }
+
+      else
+      {
+      echo "0 results";
+    }
+
+    $conn->close();
+    ?> 
+    
+   
+    </div>
+    </div>
+  
+
+
+
+
+
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
