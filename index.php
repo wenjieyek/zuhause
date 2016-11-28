@@ -43,7 +43,7 @@ function myFunction() {
       echo "0 results";
     }
 
-    $conn->close();
+    
     ?> 
     
    
@@ -109,89 +109,52 @@ function myFunction() {
     <div class="album text-muted">
       <div class="container">
 
+        
         <div class="row">
+        
+        <?php
+
+      //$sql = "SELECT picture,title FROM portfolio WHERE thumbnail='1' GROUP BY title";
+
+        $sql = "SELECT * FROM portfolio GROUP BY title";
+      
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      
+
+      while($row = $result->fetch_assoc()) {
+        echo "<div class='col-sm-4'>
+           <div class='card'>
+
+            <a href='designDetailsInterface.php?title=".$row['title']."'>
+            <img  style='height: 210px; width: 100%; display: block;' src='".$row['picture']."' >
+             </a>
+
+            <p >".$row['title']."</p>
+            <p class='card-text'>".$row['tags']."</p>
+           
+          </div>
+          </div>";
 
         
-          <div class="col-sm-4">
-           <div class="card">
+      }
+      }
+      
+      else
+      {
+      echo "0 results";
+    }
 
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
+    $conn->close();
 
-           <div class="col-sm-4">
-           <div class="card">
 
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
+        ?>
+        
+         
 
-           <div class="col-sm-4">
-           <div class="card">
-
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
-
-           <div class="col-sm-4">
-           <div class="card">
-
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
-
-           <div class="col-sm-4">
-           <div class="card">
-
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
-
-           <div class="col-sm-4">
-           <div class="card">
-
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
-
-           <div class="col-sm-4">
-           <div class="card">
-
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
-
-           <div class="col-sm-4">
-           <div class="card">
-
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
-
-           <div class="col-sm-4">
-           <div class="card">
-
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
-
-           <div class="col-sm-4">
-           <div class="card">
-
-            <img  style="height: 250px; width: 100%; display: block;" src="http://cdn.home-designing.com/wp-content/uploads/2016/09/minimalist-neutral-interior-with-geometric-decor.jpg" >
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          </div>
-
+         
       </div>
     </div>
     </div>

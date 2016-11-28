@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
     $title 			= 	mysqli_escape_string($conn,$_POST['title']);
     $description 	= 	mysqli_escape_string($conn,$_POST['description']);
     $tags 			= 	mysqli_escape_string($conn,$_POST['tags']);
-    $thumbnail		=	0;
+   
     $userid 		=	$_SESSION['email'];
   
 
@@ -65,16 +65,16 @@ if (isset($_POST['submit'])) {
 							picture,
 							tags,
 							userid,
-							title,
-							thumbnail
+							title
+							
 							) 
 				VALUES (
 							'$description',
 							'$target_file',
 							'$tags', 
 							'$userid', 
-							'$title',
-							'$thumbnail'
+							'$title'
+						
 							)";
 
 if ($conn->query($sql) ===TRUE){

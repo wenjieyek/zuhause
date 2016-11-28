@@ -49,17 +49,17 @@ $(document).ready(function(){
 
     <form method="post" name="multiple_upload_form" id="multiple_upload_form" enctype="multipart/form-data" action="insertDesign.php" class="form-group" style="width:50%;">
 
-     <p>Title: <input type="text" name="title" class="form-control"></p>
+     <p>Title: <input type="text" name="title" class="form-control" required></p>
 
-     <p>Description <textarea name="description" class="form-control"></textarea></p>
+     <p>Description: <textarea name="description" class="form-control" required></textarea></p>
 
-     <p>Tag: <input type="text" name="tags" class="form-control"></p>
+     <p>Tag: <input type="text" name="tags" class="form-control" required></p>
 
 
 
       <p><input type="hidden" name="image_form_submit" value="1"/>
-            <label>Choose Image</label>
-            <input type="file" name="images[]" id="images" multiple >
+            <label>Choose Image: </label>
+            <p><input type="file" name="images[]" id="images" multiple class="form-control" required></p>
 
             </p>
        
