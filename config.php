@@ -12,6 +12,8 @@
 		die("Connection Failed: ". $conn->connect_error);
 	}
 
+  date_default_timezone_set("Asia/Kuala_Lumpur");
+
 session_start();
 	
 ?>
@@ -35,12 +37,7 @@ session_start();
 
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
-    
-    <script type="text/javascript">
-    $(window).load(function(){
-        $('#myModal').modal('show');
-    });
-</script>
+
 
 
     
@@ -68,7 +65,7 @@ session_start();
     
 
     <li class="nav-item ">
-      <a class="nav-link" href="index.php">Share Your Design </a>
+      <a class="nav-link" href="insertDesignInterface.php">Share Your Design </a>
     </li>
 
     
