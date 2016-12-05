@@ -89,7 +89,7 @@ include "config.php";
             
            
           
-          </div>";
+          ";
 
 
               
@@ -99,6 +99,62 @@ include "config.php";
         
       }
 
+      ?>
+
+      <h5>Interested? Contact Him Now!</h5>
+
+      <form action="" method="POST" class="form-signin">
+      
+      <input type="text" name="title" placeholder="Title" class="form-control">
+      <input type="text" name="name" placeholder="Name" class="form-control">
+      <input type="text" name="message" placeholder="Hi! I am interested" class="form-control">
+      <p><input type="Submit" name="submit" value="Submit" class="form-control"></p>
+        
+      </form>
+
+
+      <?php
+      
+       $sql="SELECT * FROM advertisment ";
+
+
+      $result=$conn->query($sql);
+
+      if ($result->num_rows>0) {
+         while($row = $result->fetch_assoc()) {
+
+          
+
+          echo "
+           
+             
+            
+            <p><a href='https://".$row['link']."'><img  class='img-fluid ' width='100%'  src='".$row['picture']."' ></a></p>
+           
+            
+
+          
+            
+           
+          
+          ";
+
+
+              
+         }
+        
+      
+        
+      }
+
+
+
+      ?>
+      
+      
+      </div>
+
+      <?php
       ///////////////////////////////////////////////////////////
       $sql="SELECT * FROM portfolio WHERE title='$title'";
      
