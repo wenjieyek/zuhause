@@ -77,7 +77,7 @@ include "config.php";
            
              
             
-            <p><h5>Designer: <br><br><img src='".$row['userpicture']."'' class='img-thumbnail' width='130px'></h5>".$row['userfullname']."</p>
+            <p><h5>Designer: <br><br><a href='searchResultInterface.php?search=".$row['useremail']."'><img src='".$row['userpicture']."'' class='img-thumbnail' width='130px'></a></h5>".$row['userfullname']."</p>
             <p><h5>Company Name: </h5>".$row['usercompanyname']."</p>
             <p><h5>Phone Number: </h5>".$row['userphonenumber']."</p>
             <p><h5>Email: </h5>".$row['useremail']."</p>

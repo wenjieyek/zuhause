@@ -122,10 +122,10 @@ session_start();
 
     ?>
         
-    <form class="form-inline float-xs-right">
+    <form class="form-inline float-xs-right" method="get" action="searchResultInterface.php">
     <li class="nav-item ">
     
-    <input class="form-control" type="text" placeholder="Search">
+    <input class="form-control" type="text" placeholder="Search" name="search">
     
 
   
