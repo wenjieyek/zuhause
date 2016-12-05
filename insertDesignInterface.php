@@ -15,6 +15,7 @@ if (@$_SESSION['username']=="") {
 <html>
 <head>
 
+<link rel="stylesheet" type="text/css" href="index_files/login.css">
 
 <link href="index_files/style.css" rel="stylesheet" type="text/css" />
 
@@ -44,16 +45,20 @@ $(document).ready(function(){
 <body>
     <div class="container">
 
-<div style="margin-top:120px;">
+<div>
   <div class="upload_div">
+
+   <h2 class="form-signin-heading"><img src="picture/home.png" class="img-responsive" style="height:40px;">&nbsp Upload Your Design</h2>
 
     <form method="post" name="multiple_upload_form" id="multiple_upload_form" enctype="multipart/form-data" action="insertDesign.php" class="form-group" style="width:50%;">
 
-     <p>Title: <input type="text" name="title" class="form-control" required></p>
+     <p><input type="text" name="title" class="form-control" placeholder="Title" required></p>
 
-     <p>Description: <textarea name="description" class="form-control" required></textarea></p>
+     <p><textarea name="description" class="form-control" placeholder="Description" required></textarea></p>
 
-     <p>Tag: <input type="text" name="tags" class="form-control" required></p>
+     <p><input type="text" name="price" class="form-control" placeholder="Price" required></p>
+
+     <p><input type="text" name="tags" class="form-control" placeholder="Tags" required></p>
 
 
 
@@ -68,7 +73,7 @@ $(document).ready(function(){
             <img src="index_files/uploading.gif"/>
         </div>
 
-        <p><input type="submit" name="submit" value="Submit" class="btn btn-secondary"></p>
+        <p><input type="submit" name="submit" value="Submit" class="btn btn-secondary" style="float:right;"></p>
 
     </form>
     </div>

@@ -39,6 +39,7 @@ if (isset($_POST['submit'])) {
     $title 			= 	mysqli_escape_string($conn,$_POST['title']);
     $description 	= 	mysqli_escape_string($conn,$_POST['description']);
     $tags 			= 	mysqli_escape_string($conn,$_POST['tags']);
+    $price 			= 	mysqli_escape_string($conn,$_POST['price']);
    
     $userid 		=	$_SESSION['email'];
   
@@ -65,7 +66,8 @@ if (isset($_POST['submit'])) {
 							picture,
 							tags,
 							userid,
-							title
+							title,
+							price
 							
 							) 
 				VALUES (
@@ -73,7 +75,8 @@ if (isset($_POST['submit'])) {
 							'$target_file',
 							'$tags', 
 							'$userid', 
-							'$title'
+							'$title',
+							'$price'
 						
 							)";
 
