@@ -115,7 +115,7 @@ include "config.php";
            
 
            
-            <p><img  class='img-fluid ' width='800px'  src='".$row['picture']."' ></p>
+            <p><img  class='img-fluid ' width='100%'  src='".$row['picture']."' ></p>
             
 
           

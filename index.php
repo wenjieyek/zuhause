@@ -129,7 +129,7 @@ function myFunction() {
            <div class='card'>
 
             <a href='designDetailsInterface.php?title=".$row['title']."'>
-            <img  style='height: 210px; width: 100%; display: block;' src='".$row['picture']."' >
+            <img  style='height: 300px; width: 100%; display: block;' src='".$row['picture']."' >
              </a>
 
             <p >".$row['title']."</p>

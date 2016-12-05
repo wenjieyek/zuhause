@@ -88,7 +88,7 @@ $sql="SELECT * FROM designer WHERE useremail='$useremail' limit 1";
 if ($conn->query($sql) ===TRUE){
 	echo "<script> alert('Register successfully')</script>";
 	$_SESSION['username']=$username;
-	$_SESSION['email']=$email;
+	$_SESSION['email']=$useremail;
 	echo "<script> window.location='index.php'</script>";
 }else{
 	echo"Error: ".$sql."<br>".$conn->error;
