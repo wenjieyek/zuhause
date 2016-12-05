@@ -114,9 +114,25 @@ function myFunction() {
         
         <?php
 
+        $per_page=9;
+if (isset($_GET['page'])) {
+
+$page = $_GET['page'];
+
+}
+
+else {
+
+$page=1;
+
+}
+
+// Page will start from 0 and Multiple by Per Page
+$start_from = ($page-1) * $per_page;
+
       //$sql = "SELECT picture,title FROM portfolio WHERE thumbnail='1' GROUP BY title";
 
-        $sql = "SELECT * FROM portfolio GROUP BY title";
+        $sql = "SELECT * FROM portfolio GROUP BY title  LIMIT $start_from, $per_page";
       
 
     $result = $conn->query($sql);
@@ -126,10 +142,10 @@ function myFunction() {
 
       while($row = $result->fetch_assoc()) {
         echo "<div class='col-sm-4'>
-           <div class='card'>
+           <div class='card' style='height:400px;'>
 
             <a href='designDetailsInterface.php?title=".$row['title']."'>
-            <img  style='height: 300px; width: 100%; display: block;' src='".$row['picture']."' >
+            <img  style='height: 270px; width: 100%; display: block;' src='".$row['picture']."' >
              </a>
 
             <p >".$row['title']."</p>
@@ -147,15 +163,37 @@ function myFunction() {
       echo "0 results";
     }
 
-    $conn->close();
+   echo "</div>";
 
 
+
+    //Now select all from table
+$query = "SELECT * FROM portfolio GROUP BY title";
+$result = mysqli_query($conn, $query);
+
+// Count the total records
+$total_records = mysqli_num_rows($result);
+
+//Using ceil function to divide the total records on per page
+$total_pages = ceil($total_records / $per_page);
+
+//Going to first page
+echo "<center><a href='index.php?page=1'>".'First Page'."</a> ";
+
+for ($i=1; $i<=$total_pages; $i++) {
+
+echo "<a href='index.php?page=".$i."''>".$i."</a> ";
+};
+// Going to last page
+echo "<a href='index.php?page=$total_pages'>".'Last Page'."</a></center> ";
+
+ $conn->close();
         ?>
         
          
 
          
-      </div>
+      
     </div>
     </div>
 

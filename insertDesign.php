@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
 							)";
 
 if ($conn->query($sql) ===TRUE){
-	echo "<script> alert('Upload successfully')</script>";
+	//echo "<script> alert('Upload successfully')</script>";
 	
 	//echo "<script> window.location='index.php'</script>";
 }else{

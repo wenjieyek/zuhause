@@ -55,7 +55,7 @@ session_start();
        
         
         <a href="index.php" class="navbar-brand" >
-        <img src="picture/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Zuhause, share your house design!">
+        <img src="picture/logo.png" width="30px" height="30px" class="d-inline-block align-top" alt="Zuhause, share your house design!">
         &nbsp Zuhause
         </a>
 
