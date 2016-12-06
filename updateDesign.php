@@ -44,8 +44,7 @@ $result = $conn->query($sql);
 
          <input type="text" name="title"  class="form-control"  required <?php echo "value='".$row["title"]."'"?>>
 
-         <textarea name="description"  class="form-control" rows="10" cols="50" required> 
-         <?php echo $row["description"] ?>
+         <textarea name="description"  class="form-control" rows="10" cols="50" required><?php echo $row["description"] ?>
              
          </textarea>
 

@@ -58,7 +58,8 @@ include "config.php";
 
          echo "
               
-              <th><img class='img-fluid' src='".$row["picture"]."' style='width:1000px'></th> 
+              <th><a href='manageDesignDetailsInterface.php?title=".$row["title"]."&email=".$email."' ><img class='img-fluid' src='".$row["picture"]."' style='width:1000px'></a></th> 
+
               <th>".$row["title"]."</th> 
               <th>".$row["description"]."</th> 
               <th>".$row["tags"]."</th> 
@@ -69,7 +70,7 @@ include "config.php";
               <th><a href='deleteDesign.php?title=".$row["title"]."&email=".$email."' class='btn btn-danger' onclick='return confirmation()'>
               Delete</a></th> 
 
-             <th><a href='insertDesign.php?title=".$row["title"]."&email=".$email."' class='btn btn-secondary'>Insert</a></th> 
+             <th><a href='insertNewDesignInterface.php?title=".$row["title"]."&email=".$email."' class='btn btn-secondary'>Insert New</a></th> 
               
              
               
