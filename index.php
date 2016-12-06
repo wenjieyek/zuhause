@@ -145,7 +145,7 @@ $start_from = ($page-1) * $per_page;
            <div class='card' style='height:400px;'>
 
             <a href='designDetailsInterface.php?title=".$row['title']."'>
-            <img  style='height: 270px; width: 100%; display: block;' src='".$row['picture']."' >
+            <img   style='height: 270px; width: 100%; display: block;' src='".$row['picture']."' >
              </a>
 
             <p >".$row['title']."</p>

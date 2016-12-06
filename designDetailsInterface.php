@@ -10,6 +10,7 @@ include "config.php";
 
 
 
+
 ?>
 
 <head>
@@ -53,6 +54,7 @@ include "config.php";
           ";
 
           $useremail=$row['userid'];
+
               
          }
         
@@ -90,6 +92,8 @@ include "config.php";
            
           
           ";
+         
+          
 
 
               
@@ -105,8 +109,11 @@ include "config.php";
 
       <form action="" method="POST" class="form-signin">
       
-      <input type="text" name="title" placeholder="Title" class="form-control">
+      
+
+      <input type="email" name="email" placeholder="Email" class="form-control">
       <input type="text" name="name" placeholder="Name" class="form-control">
+
       <input type="text" name="message" placeholder="Hi! I am interested" class="form-control">
       <p><input type="Submit" name="submit" value="Submit" class="form-control"></p>
         
@@ -114,6 +121,54 @@ include "config.php";
 
 
       <?php
+
+      if ( isset( $_POST['submit'] ) ) { 
+
+        $email     =  mysqli_escape_string($conn,$_POST['email']);
+        $name      =  mysqli_escape_string($conn,$_POST['name']);
+        $message   =  mysqli_escape_string($conn,$_POST['message']);
+        $link      =  $_SERVER['REQUEST_URI'];
+        
+        $status=0;
+  
+
+
+
+         $sql ="INSERT INTO message(
+                     name,
+                     email,
+                     message,
+                     status,
+                     receiver,
+                     link) 
+            VALUES (
+                     '$email',
+                     '$name',
+                     '$message', 
+                     '$status',
+                     '$useremail',
+                     '$link'
+                     )";
+
+if ($conn->query($sql) ===TRUE){
+   echo "<script> alert('Message send successfully!')</script>";
+  
+}else{
+   echo"Error: ".$sql."<br>".$conn->error;
+         
+         
+        }
+
+        
+
+   
+
+
+
+}
+
+
+      
       
        $sql="SELECT * FROM advertisment ";
 

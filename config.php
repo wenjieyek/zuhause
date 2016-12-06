@@ -1,7 +1,7 @@
 <?php
 	$servername="localhost";
 	$username="root";
-	$password="";
+	$password="12345";
 	$database="project";
 
 	//create connection
@@ -66,6 +66,7 @@ session_start();
 
     <li class="nav-item ">
       <a class="nav-link" href="insertDesignInterface.php">Share Your Design </a>
+
     </li>
 
     
@@ -82,6 +83,8 @@ session_start();
  } else{
 
   echo "<li class='nav-item dropdown float-xs-left'>
+
+
 
       <a class='nav-link dropdown-toggle' href='http://example.com' id='supportedContentDropdown' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
       <i class='fa fa-user-circle' aria-hidden='true'></i>&nbsp ".ucfirst(@$_SESSION['username'])."
@@ -105,7 +108,15 @@ session_start();
 
         
 
-        echo "<a class='dropdown-item' href='updateInterface.php?email=".@$_SESSION['email']."'>
+        echo "
+        <a class='dropdown-item' href='manageDesignInterface.php?email=".@$_SESSION['email']."'>
+        <i class='fa fa-cog' aria-hidden='true'></i>&nbspManage Design </a>
+
+        <a class='dropdown-item' href='messageInterface.php?email=".@$_SESSION['email']."'>
+        <i class='fa fa-envelope-o' aria-hidden='true'></i>&nbspMessage </a>
+
+
+        <a class='dropdown-item' href='updateInterface.php?email=".@$_SESSION['email']."'>
         <i class='fa fa-user-circle' aria-hidden='true'></i>
         &nbspUpdate
         </a>

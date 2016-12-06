@@ -33,6 +33,7 @@ $(document).ready(function(){
       },
       success:function(e){
         $('.uploading').hide();
+        alert('Inserted successfully');
       },
       error:function(e){
       }
