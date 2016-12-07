@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.3.11
+-- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: 2016-12-06 13:38:08
--- 服务器版本： 5.6.24
+-- Host: 127.0.0.1
+-- Generation Time: Dec 07, 2016 at 08:42 AM
+-- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -14,26 +14,28 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `project`
+-- Database: `b160127b_yekboonkeat_project`
 --
+CREATE DATABASE IF NOT EXISTS `b160127b_yekboonkeat_project` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `b160127b_yekboonkeat_project`;
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `admin`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE IF NOT EXISTS `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- 转存表中的数据 `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
@@ -43,18 +45,18 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `advertisment`
+-- Table structure for table `advertisment`
 --
 
-CREATE TABLE `advertisment` (
+CREATE TABLE IF NOT EXISTS `advertisment` (
   `id` int(11) NOT NULL,
   `link` varchar(255) NOT NULL,
   `picture` varchar(255) NOT NULL,
   `type` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
--- 转存表中的数据 `advertisment`
+-- Dumping data for table `advertisment`
 --
 
 INSERT INTO `advertisment` (`id`, `link`, `picture`, `type`) VALUES
@@ -65,10 +67,10 @@ INSERT INTO `advertisment` (`id`, `link`, `picture`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `designer`
+-- Table structure for table `designer`
 --
 
-CREATE TABLE `designer` (
+CREATE TABLE IF NOT EXISTS `designer` (
   `id` int(11) NOT NULL,
   `username` varchar(12) NOT NULL,
   `userpassword` varchar(255) NOT NULL,
@@ -78,10 +80,10 @@ CREATE TABLE `designer` (
   `userphonenumber` varchar(100) NOT NULL,
   `userpicture` varchar(100) NOT NULL,
   `userdescription` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
--- 转存表中的数据 `designer`
+-- Dumping data for table `designer`
 --
 
 INSERT INTO `designer` (`id`, `username`, `userpassword`, `useremail`, `userfullname`, `usercompanyname`, `userphonenumber`, `userpicture`, `userdescription`) VALUES
@@ -92,10 +94,10 @@ INSERT INTO `designer` (`id`, `username`, `userpassword`, `useremail`, `userfull
 -- --------------------------------------------------------
 
 --
--- 表的结构 `message`
+-- Table structure for table `message`
 --
 
-CREATE TABLE `message` (
+CREATE TABLE IF NOT EXISTS `message` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -103,23 +105,24 @@ CREATE TABLE `message` (
   `status` int(11) NOT NULL,
   `receiver` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- 转存表中的数据 `message`
+-- Dumping data for table `message`
 --
 
 INSERT INTO `message` (`id`, `name`, `email`, `message`, `status`, `receiver`, `link`) VALUES
 (2, 'dx3152@hotmail.com', 'Yek Wenjie', 'Hi, I am interested', 1, 'nayoung@hotmail.com', '/project/designDetailsInterface.php?title=3%20Light,%20White%20and%20Minimalist%20Homes%20Inspiring%20Clarity%20of%20Mind'),
-(3, 'dx3152@hotmail.com', 'Yek Wenjie', 'Hi, I am interested', 1, 'nayoung@hotmail.com', '/project/designDetailsInterface.php?title=Test');
+(3, 'dx3152@hotmail.com', 'Yek Wenjie', 'Hi, I am interested', 1, 'nayoung@hotmail.com', '/project/designDetailsInterface.php?title=Test'),
+(4, 'dx3152@hotmail.com', 'Yek Wenjie', 'Hi', 0, 'sohye@hotmail.com', '/project/designDetailsInterface.php?title=40%20Beautiful%20Black%20and%20White%20Kitchen%20Designs');
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `portfolio`
+-- Table structure for table `portfolio`
 --
 
-CREATE TABLE `portfolio` (
+CREATE TABLE IF NOT EXISTS `portfolio` (
   `id` int(11) NOT NULL,
   `description` text NOT NULL,
   `picture` varchar(255) NOT NULL,
@@ -127,10 +130,10 @@ CREATE TABLE `portfolio` (
   `userid` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `price` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=latin1;
 
 --
--- 转存表中的数据 `portfolio`
+-- Dumping data for table `portfolio`
 --
 
 INSERT INTO `portfolio` (`id`, `description`, `picture`, `tags`, `userid`, `title`, `price`) VALUES
@@ -216,21 +219,21 @@ INSERT INTO `portfolio` (`id`, `description`, `picture`, `tags`, `userid`, `titl
 (136, 'We all have quirks and luxuries we would love to indulge. Yet agate doesnâ€™t always work with interiors, emojis donâ€™t always light up your kitchen, and marble and slate make for expensive kitchen benchtops. Create it in a coaster instead? Problem solve', 'portfolio/So Hye_20161205_182139_cream-and-gold-panel-cup-coaster-600x600.jpg', 'accessories, dining', 'sohye@hotmail.com', '52 Unique Drink Coasters To Help You Keep Your Stains Off In Style', '12'),
 (137, 'We all have quirks and luxuries we would love to indulge. Yet agate doesnâ€™t always work with interiors, emojis donâ€™t always light up your kitchen, and marble and slate make for expensive kitchen benchtops. Create it in a coaster instead? Problem solve', 'portfolio/So Hye_20161205_182139_cut-out-cute-animal-wood-coasters-600x600.jpeg', 'accessories, dining', 'sohye@hotmail.com', '52 Unique Drink Coasters To Help You Keep Your Stains Off In Style', '12'),
 (138, 'We all have quirks and luxuries we would love to indulge. Yet agate doesnâ€™t always work with interiors, emojis donâ€™t always light up your kitchen, and marble and slate make for expensive kitchen benchtops. Create it in a coaster instead? Problem solve', 'portfolio/So Hye_20161205_182139_differing-colour-wooden-cool-drink-coasters-600x400.jpg', 'accessories, dining', 'sohye@hotmail.com', '52 Unique Drink Coasters To Help You Keep Your Stains Off In Style', '12'),
-(139, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_black-and-white-kitchen-inspiration.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(140, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_black-and-white-kitchen-with-marble-floor.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(141, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_black-chevron-floors-in-kitchen.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(142, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_black-on-black-kitchen-with-vertical-garden.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(143, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_color-blocking-in-black-and-white-kitchen-dining-combination.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(144, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_geometric-greyscale-kitchen.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(145, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_glossy-white-kitchen-cabinets-with-matte-backsplash.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(146, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_greyscale-kitchen-with-neutral-wood-cabinets.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(147, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_greyscale-kitchen-with-potted-plants.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(148, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_matte-black-and-copper-kitchen.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(149, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_minimalist-black-and-white-kitchen-design.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(150, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_modern-neutral-kitchen-with-window-backsplash.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(151, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_ultra-minimalist-black-and-white-kitchen-inspiration.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(152, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_unique-black-kitchen-island-and-bar-combination.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
-(153, 'Black and white interiors are impossible to ignore. They\'re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_wood-island-in-black-and-white-kitchen.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(139, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_black-and-white-kitchen-inspiration.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(140, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_black-and-white-kitchen-with-marble-floor.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(141, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_black-chevron-floors-in-kitchen.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(142, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_black-on-black-kitchen-with-vertical-garden.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(143, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_color-blocking-in-black-and-white-kitchen-dining-combination.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(144, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_geometric-greyscale-kitchen.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(145, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_glossy-white-kitchen-cabinets-with-matte-backsplash.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(146, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_greyscale-kitchen-with-neutral-wood-cabinets.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(147, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_greyscale-kitchen-with-potted-plants.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(148, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_matte-black-and-copper-kitchen.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(149, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_minimalist-black-and-white-kitchen-design.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(150, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_modern-neutral-kitchen-with-window-backsplash.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(151, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_ultra-minimalist-black-and-white-kitchen-inspiration.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(152, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_unique-black-kitchen-island-and-bar-combination.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
+(153, 'Black and white interiors are impossible to ignore. They''re bold, versatile, and perhaps most importantly, they always allow the interesting architectural elements and fixtures to stand at center stage. This post covers 40 amazing kitchens that use greysc', 'portfolio/So Hye_20161205_182310_wood-island-in-black-and-white-kitchen.jpg', ' black, black and white', 'sohye@hotmail.com', '40 Beautiful Black and White Kitchen Designs', 'RM20000'),
 (154, 'A small apartment need not obstruct style. These four spaces under 100sqm create characterful and contemporary living areas. White walls meet light wood with artistic, calligraphed wall decals. Dark, dangerous colours meet slate flooring and street lighti             \r\n                      \r\n                      \r\n                      \r\n         ', 'portfolio/So Hye_20161205_182452_beige-wall-quote-small-minimalist-apartment.jpg', ' small space', 'sohye@hotmail.com', '4 Small Apartment Interiors Embracing Character Themes', 'RM20000'),
 (155, 'A small apartment need not obstruct style. These four spaces under 100sqm create characterful and contemporary living areas. White walls meet light wood with artistic, calligraphed wall decals. Dark, dangerous colours meet slate flooring and street lighti             \r\n                      \r\n                      \r\n                      \r\n         ', 'portfolio/So Hye_20161205_182452_corridor-kitchen-small-white-apartment.jpg', ' small space', 'sohye@hotmail.com', '4 Small Apartment Interiors Embracing Character Themes', 'RM20000'),
 (156, 'A small apartment need not obstruct style. These four spaces under 100sqm create characterful and contemporary living areas. White walls meet light wood with artistic, calligraphed wall decals. Dark, dangerous colours meet slate flooring and street lighti             \r\n                      \r\n                      \r\n                      \r\n         ', 'portfolio/So Hye_20161205_182452_draped-idea-lighting-small-minimalist-apartment.jpg', ' small space', 'sohye@hotmail.com', '4 Small Apartment Interiors Embracing Character Themes', 'RM20000'),
@@ -273,12 +276,12 @@ INSERT INTO `portfolio` (`id`, `description`, `picture`, `tags`, `userid`, `titl
 (199, 'A tired 1990â€™s apartment building on the Portuguese seaside has been revamped for the growing number of people looking for weekend and vacation homes. Once a space that exposed the more intimate parts of the home to the busy street, the space has been f', 'portfolio/nayoung_20161205_213002_Accordion-Door-Creative-Storage-Solutions-Small-Spaces.jpg', 'minimalist,modern', 'nayoung@hotmail.com', 'Beach Home Design Inspiration', 'RM20000'),
 (200, 'A tired 1990â€™s apartment building on the Portuguese seaside has been revamped for the growing number of people looking for weekend and vacation homes. Once a space that exposed the more intimate parts of the home to the busy street, the space has been f', 'portfolio/nayoung_20161205_213002_Accordion-Doors-Kitchen-Space-Design.jpg', 'minimalist,modern', 'nayoung@hotmail.com', 'Beach Home Design Inspiration', 'RM20000'),
 (201, 'A tired 1990â€™s apartment building on the Portuguese seaside has been revamped for the growing number of people looking for weekend and vacation homes. Once a space that exposed the more intimate parts of the home to the busy street, the space has been f', 'portfolio/nayoung_20161205_213002_All-White-Interior-Reading-Nook.jpg', 'minimalist,modern', 'nayoung@hotmail.com', 'Beach Home Design Inspiration', 'RM20000'),
-(202, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn\'t mean each space has to be black and white, infact we\'ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_14be4f36599117.5721f88a0bc82.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
-(203, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn\'t mean each space has to be black and white, infact we\'ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_38be5936599117.5721f88a08b48.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
-(204, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn\'t mean each space has to be black and white, infact we\'ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_629f4336599117.5721f88a0a486.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
-(205, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn\'t mean each space has to be black and white, infact we\'ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_2771f636599117.5721f88a083f6.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
-(206, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn\'t mean each space has to be black and white, infact we\'ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_8398ed36599117.5721f88a0b210.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
-(207, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn\'t mean each space has to be black and white, infact we\'ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_f6385936599117.5721f88a0b798.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
+(202, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn''t mean each space has to be black and white, infact we''ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_14be4f36599117.5721f88a0bc82.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
+(203, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn''t mean each space has to be black and white, infact we''ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_38be5936599117.5721f88a08b48.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
+(204, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn''t mean each space has to be black and white, infact we''ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_629f4336599117.5721f88a0a486.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
+(205, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn''t mean each space has to be black and white, infact we''ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_2771f636599117.5721f88a083f6.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
+(206, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn''t mean each space has to be black and white, infact we''ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_8398ed36599117.5721f88a0b210.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
+(207, 'Modern minimalism is loosely defined by paired down design elements, clean lines, and open spaces. But that doesn''t mean each space has to be black and white, infact we''ve gathered four very different spaces that celebrate modern minimalism with their own', 'portfolio/nayoung_20161205_213140_f6385936599117.5721f88a0b798.jpg', 'minimalist,modern', 'nayoung@hotmail.com', '4 Homes That Celebrate Modern Minimalism', 'RM20000'),
 (208, 'This minimalist plate set from Japanese firm Metaphys bags our Product Of The Week Award for its sheer simplicity and beauty in design. Called Fueille, the set looks at beautiful forms found in nature for inspiration and looks to break away from the monot', 'portfolio/nayoung_20161205_213318_minimalist-plate.jpg', 'minimalist,modern,flatware', 'nayoung@hotmail.com', 'Product Of The Week: Minimalist Plate Set From Metaphys', 'RM20000'),
 (209, 'This minimalist plate set from Japanese firm Metaphys bags our Product Of The Week Award for its sheer simplicity and beauty in design. Called Fueille, the set looks at beautiful forms found in nature for inspiration and looks to break away from the monot', 'portfolio/nayoung_20161205_213318_minimalist-plates.jpg', 'minimalist,modern,flatware', 'nayoung@hotmail.com', 'Product Of The Week: Minimalist Plate Set From Metaphys', 'RM20000'),
 (210, 'This minimalist plate set from Japanese firm Metaphys bags our Product Of The Week Award for its sheer simplicity and beauty in design. Called Fueille, the set looks at beautiful forms found in nature for inspiration and looks to break away from the monot', 'portfolio/nayoung_20161205_213318_modern-minimalist-plates.jpg', 'minimalist,modern,flatware', 'nayoung@hotmail.com', 'Product Of The Week: Minimalist Plate Set From Metaphys', 'RM20000'),
@@ -362,34 +365,34 @@ ALTER TABLE `portfolio`
   ADD PRIMARY KEY (`id`);
 
 --
--- 在导出的表使用AUTO_INCREMENT
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- 使用表AUTO_INCREMENT `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
--- 使用表AUTO_INCREMENT `advertisment`
+-- AUTO_INCREMENT for table `advertisment`
 --
 ALTER TABLE `advertisment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
--- 使用表AUTO_INCREMENT `designer`
+-- AUTO_INCREMENT for table `designer`
 --
 ALTER TABLE `designer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
--- 使用表AUTO_INCREMENT `message`
+-- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
--- 使用表AUTO_INCREMENT `portfolio`
+-- AUTO_INCREMENT for table `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=297;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=255;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

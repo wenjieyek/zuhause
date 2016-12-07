@@ -142,8 +142,9 @@ include "config.php";
                      receiver,
                      link) 
             VALUES (
+                      '$name',
                      '$email',
-                     '$name',
+                     
                      '$message', 
                      '$status',
                      '$useremail',
